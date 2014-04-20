@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Clock</title>
+<style>
+  body {
+      overflow:hidden;
+      background-image:url("ansel_adams.jpg");
+      background-size: cover;
+  }
+  .overlay {
+    position: absolute;
+    width: 1200px;
+    height: 50px;
+    top: 34%;
+    left: 10%;
+    margin-left: -100px; /* margin is -0.5 * dimension */
+    margin-top: -25px; 
+  }
+  .overlay span {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size:130pt;
+    color: #fff;
+  }
+</style>
+<script type="text/javascript">
+  function updateClock ()
+  {
+    var currentTime = new Date ();
+    var currentHours = currentTime.getHours ();
+    var currentMinutes = currentTime.getMinutes ();
+    var currentSeconds = currentTime.getSeconds ();
+    currentMinutes = (currentMinutes < 10 ? "0" : "") + currentMinutes;
+    currentSeconds = (currentSeconds < 10 ? "0" : "") + currentSeconds;
+    var timeOfDay = (currentHours < 12) ? "AM" : "PM";
+    currentHours = (currentHours > 12) ? currentHours - 12 : currentHours;
+    currentHours = (currentHours == 0) ? 12 : currentHours;
+    var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+    document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+  }
+</script>
+</head>
+
+<body onload="updateClock(); setInterval('updateClock()', 1000)">
+<center>
+  <div class="overlay">
+    <span id="clock">
+       
+    </span>
+  </div>
+</center>
+</body>
+</html>
