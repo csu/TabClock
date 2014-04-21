@@ -1,6 +1,8 @@
 TabClock
 ========
 
+### [Download latest release](https://github.com/csu/TabClock/releases/download/1.0.1/TabClock.safariextz)
+
 A Safari extension that displays a fancy clock when a new tab is opened.
 
 ### Todo
