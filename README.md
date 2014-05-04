@@ -1,7 +1,7 @@
 TabClock
 ========
 
-### [Download latest release](https://github.com/csu/TabClock/releases/download/1.0.1/TabClock.safariextz)
+### [Download latest release](https://github.com/csu/TabClock/releases/download/1.0.1/TabClock.safariextz) | [Download minimalist version](https://github.com/csu/TabClock/releases/download/1.0.1M/TabClock-Minimalist.safariextz)
 
 A Safari extension that displays a fancy clock when a new tab is opened.
 
