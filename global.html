@@ -7,11 +7,12 @@
 
 	function openHandler(e) {
 		if ((e.target instanceof SafariBrowserTab) && !(e.target instanceof SafariBrowserWindow)) {
-			console.log('is instance of tab')
-			safari.application.activeBrowserWindow.activeTab.url = safari.extension.baseURI + 'clock.html'
+			// console.log('is instance of tab')
+			console.log(safari.application.activeBrowserWindow);
+			safari.application.activeBrowserWindow.activeTab.url = safari.extension.baseURI + 'clock.html';
 		}
 		else {
-			console.log('is instance of window')
+			// console.log('is instance of window')
 		}
 	}
 	</script>
