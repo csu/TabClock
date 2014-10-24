@@ -2,9 +2,15 @@
 <head>
 <title>Clock</title>
 <style>
+  @font-face
+  {
+    font-family: clockFont;
+    src: url(AvenirNextCondensed-UltraLight.ttf);
+  }
+
   body {
       overflow:hidden;
-      background-image:url("ansel_adams.jpg");
+      background-color: #000;
       background-size: cover;
   }
   .overlay {
@@ -14,12 +20,13 @@
     left:0; 
     right:0;
     margin:auto; 
-    height:240px; 
+    height:400px; 
 
   }
   .overlay span {
-    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-    font-size:130pt;
+    font-family: clockFont, Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size:190pt;
+    /* letter-spacing: -25px; */
     color: #fff;
 }
   .overlay div{
@@ -33,12 +40,13 @@
     var currentHours = currentTime.getHours ();
     var currentMinutes = currentTime.getMinutes ();
     var currentSeconds = currentTime.getSeconds ();
+    currentHours = (currentHours < 10 ? "0" : "") + currentHours;
     currentMinutes = (currentMinutes < 10 ? "0" : "") + currentMinutes;
     currentSeconds = (currentSeconds < 10 ? "0" : "") + currentSeconds;
-    var timeOfDay = (currentHours < 12) ? "AM" : "PM";
-    currentHours = (currentHours > 12) ? currentHours - 12 : currentHours;
-    currentHours = (currentHours == 0) ? 12 : currentHours;
-    var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+    // var timeOfDay = (currentHours < 12) ? "AM" : "PM";
+    // currentHours = (currentHours > 12) ? currentHours - 12 : currentHours;
+    // currentHours = (currentHours == 0) ? 12 : currentHours;
+    var currentTimeString = currentHours + " : " + currentMinutes + " : " + currentSeconds;
     document.getElementById("clock").firstChild.nodeValue = currentTimeString;
   }
 </script>
